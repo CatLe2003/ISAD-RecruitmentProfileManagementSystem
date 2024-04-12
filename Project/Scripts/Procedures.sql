@@ -4,7 +4,7 @@ Select * from doanhnghiep;
 
 CheckLogin 'dn', 'cblazey0@reuters.com', 'uB5=/2d{FrihRb'
 GetUserID 'dn', 'cblazey0@reuters.com', 'uB5=/2d{FrihRb'
-
+-- Kiểm tra login
 CREATE OR ALTER PROCEDURE CheckLogin
     @LoaiTK NVARCHAR(2),
     @Email NVARCHAR(50),
@@ -58,7 +58,7 @@ BEGIN
         SELECT 'Invalid account type' AS Result;
     END
 END;
-
+-- Lấy ID của user đã login
 CREATE OR ALTER PROCEDURE GetUserID
     @LoaiTK NVARCHAR(2),
     @Email NVARCHAR(50),
@@ -91,7 +91,7 @@ BEGIN
         SELECT NULL AS UserID;
     END
 END;
-
+-- Xem danh sách phiếu đk quảng cáo theo doanh nghiệp, từ khóa
 CREATE OR ALTER PROC XemPhieuDKQC_DoanhNghiep
     @madn INT,
     @keyword NVARCHAR(100)
@@ -117,13 +117,13 @@ END
 XemPhieuDKQC_DoanhNghiep 4,'2024'
 
 select * from PHIEUDKQUANGCAO
-
+-- Lấy tất cả các tên hình thức đăng tuyển
 CREATE OR ALTER PROCEDURE GetTenHinhThucDangTuyen
 AS
 BEGIN
     SELECT TenHinhThuc FROM HINHTHUCDANGTUYEN
 END;
-
+-- Lấy mã đăng tuyển của doanh nghiệp đó
 CREATE OR ALTER PROCEDURE GetMaThongTinDangTuyenByMaDN
     @MaDN INT
 AS
@@ -132,7 +132,7 @@ BEGIN
     FROM THONGTINDANGTUYEN
     WHERE MaDN = @MaDN;
 END;
-
+-- Lấy mã hợp đồng của doanh nghiệp đó
 CREATE OR ALTER PROCEDURE GetMaHopDongByMaDN
     @MaDN INT
 AS
@@ -142,7 +142,7 @@ BEGIN
     WHERE MaDN = @MaDN;
 END;
 
-
+-- Thêm phiếu đk quảng cáo cho doanh nghiệp
 CREATE OR ALTER PROCEDURE ThemPhieuDKQuangCao
     @MaHT INT,
     @MaDT INT,
@@ -185,7 +185,7 @@ BEGIN
 END
 
 exec ThemPhieuDKQuangCao 1,2,3,'2023-11-19'
-
+-- Cập nhật phiếu đk quảng cáo
 CREATE OR ALTER PROCEDURE CapNhatPhieuDKQuangCao
     @MaHT INT,
     @MaDT INT,
@@ -226,7 +226,7 @@ BEGIN
     -- Thông báo thành công nếu không có lỗi
     PRINT 'Cập nhật Phieu DK Quang Cao thành công'
 END
-
+-- Xem thông tin chi tiết 1 phiếu quảng cáo
 CREATE OR ALTER PROCEDURE XemPhieuDKQuangCao
     @MaHT INT,
     @MaDT INT

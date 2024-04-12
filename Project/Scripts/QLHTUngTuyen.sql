@@ -147,17 +147,7 @@ create table HOPDONG
 	constraint CK_HOPDONG_TinhTrangKyDuyet
 	check (TinhTrangKyDuyet = '1' or TinhTrangKyDuyet ='0')
 );
-/*
--- HOPDONG_PHIEUTHU --
-create table HOPDONG_PHIEUTHU
-(
-	MaHDong integer not null,
-	MaPT integer not null,
 
-	constraint PK_HOPDONG_PHIEUTHU
-	primary key (MaHDong, MaPT)
-);
-*/
 -- HOADON --
 create table HOADON
 (
@@ -249,7 +239,7 @@ create table HSUT_BANGCAP
 (
 	MaDT integer not null,
 	MaUV integer not null,
-	MaNV integer not null,
+	--MaNV integer not null,
 	MaBang integer not null,
 	TinhTrang nvarchar(10) not null,
 
@@ -370,8 +360,8 @@ add
 	constraint FK_HSUT_BANGCAP_UNGVIEN
 	foreign key (MaUV) references UNGVIEN(MaUV),
 	
-	constraint FK_HSUT_BANGCAP_NHANVIEN
-	foreign key (MaNV) references NHANVIEN(MaNV),
+	/*constraint FK_HSUT_BANGCAP_NHANVIEN
+	foreign key (MaNV) references NHANVIEN(MaNV),*/
 
 	constraint FK_HSUT_BANGCAP_THONGTINDANGTUYEN
 	foreign key (MaDT) references THONGTINDANGTUYEN(MaDT),
