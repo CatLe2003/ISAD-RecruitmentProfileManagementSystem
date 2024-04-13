@@ -57,12 +57,16 @@ create table PHIEUDKTVDN
 	MaPhieuDKDN integer identity(1,1) not null,
 	ID as 'DKDN' + right('0000' + cast(MaPhieuDKDN as varchar(8)),4) persisted,
 	NgayLap date not null,
-	NVLapPhieu integer not null,
+	NVLapPhieu integer,
 	--TenDN nvarchar(50) not null,
 	--MaSoThue char(10) not null,
 	--NguoiDaiDien nvarchar(50) not null,
 	--Diachi nvarchar(50) not null,
 	--Email nvarchar(50) not null,
+	TrangThai nvarchar(15),
+
+	constraint CK_PHIEUDKTVDN_TrangThai
+	check (TrangThai = 'Pending' or TrangThai = 'Valid' or TrangThai = 'Invalid'),
 
 	constraint PK_PHIEUDKTVDN
 	primary key (MaPhieuDKDN),
@@ -188,12 +192,16 @@ create table PHIEUDKTVUV
 	MaPhieuDKUV integer identity(1,1) not null,
 	ID as 'DKUV' + right('0000' + cast(MaPhieuDKUV as varchar(8)),4) persisted,
 	NgayLap date not null,
-	NVLapPhieu integer not null,
+	NVLapPhieu integer,
 	--Hoten nvarchar(50) not null,
 	--Gioitinh nvarchar(3) not null,
 	--Sdt char(10) not null,
 	--Diachi nvarchar(50) not null,
 	--Email nvarchar(50) not null,
+	TrangThai nvarchar(15),
+
+	constraint CK_PHIEUDKTVUV_TrangThai
+	check (TrangThai = 'Pending' or TrangThai = 'Valid' or TrangThai = 'Invalid'),
 
 	constraint PK_PHIEUDKTVUV
 	primary key (MaPhieuDKUV),
