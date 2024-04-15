@@ -75,7 +75,8 @@ BEGIN
         )
 END
 
-
+--hello its me
+--wtheck
 CheckEmailRegistered 'tredsell0@live.com'
 
 InsertUngVien 'yeosang', '1506', 'Male', 'jongho house', 'chickenmaster@gmail.com', '123'
