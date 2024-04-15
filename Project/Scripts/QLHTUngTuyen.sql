@@ -57,7 +57,7 @@ create table PHIEUDKTVDN
 	MaPhieuDKDN integer identity(1,1) not null,
 	ID as 'DKDN' + right('0000' + cast(MaPhieuDKDN as varchar(8)),4) persisted,
 	NgayLap date not null,
-	NVLapPhieu integer,
+	NVXetDuyet integer,
 	--TenDN nvarchar(50) not null,
 	--MaSoThue char(10) not null,
 	--NguoiDaiDien nvarchar(50) not null,
@@ -192,7 +192,7 @@ create table PHIEUDKTVUV
 	MaPhieuDKUV integer identity(1,1) not null,
 	ID as 'DKUV' + right('0000' + cast(MaPhieuDKUV as varchar(8)),4) persisted,
 	NgayLap date not null,
-	NVLapPhieu integer,
+	NVXetDuyet integer,
 	--Hoten nvarchar(50) not null,
 	--Gioitinh nvarchar(3) not null,
 	--Sdt char(10) not null,
@@ -303,13 +303,13 @@ add
 alter table PHIEUDKTVUV
 add 
 	constraint FK_PHIEUDKTVUV_NHANVIEN
-	foreign key (NVLapPhieu) references NHANVIEN(MaNV);
+	foreign key (NVXetDuyet) references NHANVIEN(MaNV);
 
 -- PHIEUDKTVDN --
 alter table PHIEUDKTVDN
 add 
 	constraint FK_PHIEUDKTVDN_NHANVIEN
-	foreign key (NVLapPhieu) references NHANVIEN(MaNV);
+	foreign key (NVXetDuyet) references NHANVIEN(MaNV);
 
 -- HOADON --
 alter table HOADON
