@@ -47,36 +47,67 @@ BEGIN
 
 END;
 
-CREATE OR ALTER PROC XemDSPhieuDKTVUngVien
-AS
-BEGIN
-    SELECT * FROM PHIEUDKTVUV;
-END;
 
-CREATE OR ALTER PROC XemPhieuDKQC_DoanhNghiep
-    @madn INT,
+CREATE OR ALTER PROC XemDSPhieuDKTVUngVien
+	@maphieu INT,
     @keyword NVARCHAR(100)
 AS
 BEGIN
-    SELECT 
-        MaHT AS 'Mã hình thức',
-        MaDT AS 'Mã đăng tuyển',
-        MaHDong AS 'Mã hợp đồng',
+    --SELECT * FROM PHIEUDKTVUV;
+	SELECT 
+        MaPhieuDKUV AS 'Mã phiếu',
+		ID AS 'ID',
+        NVXetDuyet AS 'Mã NV xét duyệt',
+        TrangThai AS 'Trạng thái',
         FORMAT(NgayLap, 'dd/MM/yyyy') AS 'Ngày lập'
     FROM 
-        PHIEUDKQUANGCAO qc
+        PHIEUDKTVUV phieu
     WHERE 
-        qc.MaDT IN (SELECT MaDT FROM THONGTINDANGTUYEN WHERE MaDN = @madn)
-        AND (
-            CONVERT(NVARCHAR(100), MaHT) LIKE '%' + @keyword + '%'
-            OR CONVERT(NVARCHAR(100), MaDT) LIKE '%' + @keyword + '%'
-            OR CONVERT(NVARCHAR(100), MaHDong) LIKE '%' + @keyword + '%'
-            OR FORMAT(NgayLap, 'dd/MM/yyyy') LIKE '%' + @keyword + '%'
-        )
-END
+        CONVERT(NVARCHAR(100), MaPhieuDKUV) LIKE '%' + @keyword + '%'
+        OR CONVERT(NVARCHAR(100), NVXetDuyet) LIKE '%' + @keyword + '%'
+        OR CONVERT(NVARCHAR(100), TrangThai) LIKE '%' + @keyword + '%'
+        OR FORMAT(NgayLap, 'dd/MM/yyyy') LIKE '%' + @keyword + '%'
+END;
 
---hello its me
---wtheck
+CREATE OR ALTER PROC UpdateTrangThaiPhieuDKTVUV
+	@maphieu int,
+	@manv int,
+	@trang_thai varchar(10)
+AS
+BEGIN
+    UPDATE PHIEUDKTVUV
+	SET TrangThai = @trang_thai
+	WHERE MaPhieuDKUV = @maphieu; 
+
+	UPDATE PHIEUDKTVUV
+	SET NVXetDuyet = @manv
+	WHERE MaPhieuDKUV = @maphieu; 
+
+	IF (@trang_thai = 'Invalid')
+	BEGIN 
+		DELETE FROM UNGVIEN
+		WHERE MaPhieuDKUV = @maphieu;
+	END;
+END;
+
+CREATE OR ALTER PROC XemUVTheoMaPhieu
+	@maphieu INT
+AS
+BEGIN
+    SELECT * FROM UNGVIEN
+	WHERE MaPhieuDKUV = @maphieu;
+END;
+
+
 CheckEmailRegistered 'tredsell0@live.com'
 
 InsertUngVien 'yeosang', '1506', 'Male', 'jongho house', 'chickenmaster@gmail.com', '123'
+
+XemDSPhieuDKTVUngVien null,null
+
+SELECT * FROM UNGVIEN;
+SELECT * FROM PHIEUDKTVUV;
+
+UpdateTrangThaiPhieuDKTVUV '22', '2', 'Pending'
+
+XemUVTheoMaPhieu 23
