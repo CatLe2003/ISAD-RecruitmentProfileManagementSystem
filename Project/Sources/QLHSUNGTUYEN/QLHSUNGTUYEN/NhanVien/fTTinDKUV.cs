@@ -22,24 +22,31 @@ namespace QLHSUNGTUYEN.NhanVien
 
         private void fTTinDKUV_Load(object sender, EventArgs e)
         {
-            // Lấy thông tin chi tiết của 1 phiếu đktvuv dựa vào mã phiếu
-            // được truyền từ form fGhiNhanTVUV
-            var row = new Database().Select("XemUVTheoMaPhieu " + maphieu, null);
+            // Retrieve user details using the business logic layer
+            DataRow uvDetails = TTinUVBus.GetUngVienDetails(maphieu);
 
-            txtHoten.Text = row["HOTEN"].ToString();
-            txtSDT.Text = row["SDT"].ToString();
-            txtDiachi.Text = row["DIACHI"].ToString();
-            txtEmail.Text = row["Email"].ToString();
-
-            string gioitinh = row["GIOITINH"].ToString();
-
-            if (gioitinh == "Male")
+            if (uvDetails != null)
             {
-                radioMale.Checked = true;
+                // Populate the form with user details
+                txtHoten.Text = uvDetails["HOTEN"].ToString();
+                txtSDT.Text = uvDetails["SDT"].ToString();
+                txtDiachi.Text = uvDetails["DIACHI"].ToString();
+                txtEmail.Text = uvDetails["Email"].ToString();
+
+                string gioitinh = uvDetails["GIOITINH"].ToString();
+
+                if (gioitinh == "Male")
+                {
+                    radioMale.Checked = true;
+                }
+                else
+                {
+                    radioFemale.Checked = true;
+                }
             }
             else
             {
-                radioFemale.Checked = true;
+                MessageBox.Show("Không tìm thấy thông tin ứng viên!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
