@@ -1,4 +1,5 @@
 ﻿using QLHSUNGTUYEN.DoanhNghiep;
+using QLHSUNGTUYEN.NhanVien;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,8 +110,9 @@ namespace QLHSUNGTUYEN
                     case "uv":
                         loaitk = "uv";
                         break;
-                    case "vn":
-                        loaitk = "nv";
+                    case "nv":
+                        NhanVien.fMain_NV _fMainNV = new fMain_NV(user_id);
+                        _fMainNV.Show();
                         break;
                 }
                 this.Hide();
@@ -135,6 +137,22 @@ namespace QLHSUNGTUYEN
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnDangky_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn muốn đăng kí tài khoản doanh nghiệp? (Nếu chọn không sẽ tự động chuyển sang tài khoản ứng viên)", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // User chose Yes, perform the action
+            }
+            else
+            {
+                this.Hide();
+                UngVien.fDangKyTVUV _fDangKyTVUV = new UngVien.fDangKyTVUV();
+                _fDangKyTVUV.Show();
+            }
         }
     }
 }
