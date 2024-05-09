@@ -98,9 +98,9 @@
             this.lblPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(77, 390);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(104, 23);
+            this.lblPassword.Size = new System.Drawing.Size(97, 23);
             this.lblPassword.TabIndex = 25;
-            this.lblPassword.Text = "Password:";
+            this.lblPassword.Text = "Mật khẩu:";
             // 
             // txtPassword
             // 

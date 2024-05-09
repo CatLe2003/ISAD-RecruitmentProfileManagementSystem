@@ -21,6 +21,7 @@ namespace QLHSUNGTUYEN.DoanhNghiep
 
         private void fMain_Load(object sender, EventArgs e)
         {
+            lblID.Text = "DN_" + id;
             fWelcome _fWelcome = new fWelcome();
             AddForm(_fWelcome);
         }
@@ -37,7 +38,9 @@ namespace QLHSUNGTUYEN.DoanhNghiep
         }
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            new fLogin().Show();
+            /*Application.Exit();*/
         }
 
         private void phieuDKQCToolStripMenuItem_Click(object sender, EventArgs e)

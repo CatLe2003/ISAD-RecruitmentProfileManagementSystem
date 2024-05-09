@@ -190,5 +190,10 @@ namespace QLHSUNGTUYEN
                 MessageBox.Show("Error: Thực thi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

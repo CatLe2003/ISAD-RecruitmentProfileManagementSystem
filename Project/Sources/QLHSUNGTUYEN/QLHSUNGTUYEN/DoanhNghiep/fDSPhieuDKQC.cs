@@ -126,5 +126,15 @@ namespace QLHSUNGTUYEN
                 LoadPhieuDKQC();
             }
         }
+
+        private void txtKeyword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblKeyword_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

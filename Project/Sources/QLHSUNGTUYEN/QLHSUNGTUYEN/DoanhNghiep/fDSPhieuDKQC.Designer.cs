@@ -50,9 +50,9 @@
             this.grBoxDSPhieuDKQC.AutoSize = true;
             this.grBoxDSPhieuDKQC.Controls.Add(this.dgvPhieuDKQC);
             this.grBoxDSPhieuDKQC.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grBoxDSPhieuDKQC.Location = new System.Drawing.Point(12, -582);
+            this.grBoxDSPhieuDKQC.Location = new System.Drawing.Point(12, 87);
             this.grBoxDSPhieuDKQC.Name = "grBoxDSPhieuDKQC";
-            this.grBoxDSPhieuDKQC.Size = new System.Drawing.Size(892, 1106);
+            this.grBoxDSPhieuDKQC.Size = new System.Drawing.Size(892, 417);
             this.grBoxDSPhieuDKQC.TabIndex = 1;
             this.grBoxDSPhieuDKQC.TabStop = false;
             this.grBoxDSPhieuDKQC.Text = "Danh sách phiếu đăng ký quảng cáo";
@@ -71,7 +71,7 @@
             this.MaHDong,
             this.NgayLap,
             this.btnDelete});
-            this.dgvPhieuDKQC.Location = new System.Drawing.Point(3, 703);
+            this.dgvPhieuDKQC.Location = new System.Drawing.Point(6, 51);
             this.dgvPhieuDKQC.MultiSelect = false;
             this.dgvPhieuDKQC.Name = "dgvPhieuDKQC";
             this.dgvPhieuDKQC.ReadOnly = true;
@@ -132,6 +132,7 @@
             this.txtKeyword.Name = "txtKeyword";
             this.txtKeyword.Size = new System.Drawing.Size(313, 31);
             this.txtKeyword.TabIndex = 9;
+            this.txtKeyword.TextChanged += new System.EventHandler(this.txtKeyword_TextChanged);
             // 
             // lblKeyword
             // 
@@ -142,6 +143,7 @@
             this.lblKeyword.Size = new System.Drawing.Size(80, 25);
             this.lblKeyword.TabIndex = 8;
             this.lblKeyword.Text = "Từ khóa:";
+            this.lblKeyword.Click += new System.EventHandler(this.lblKeyword_Click);
             // 
             // btnSearch
             // 
@@ -158,7 +160,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnThem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(542, 21);
             this.btnThem.Name = "btnThem";
