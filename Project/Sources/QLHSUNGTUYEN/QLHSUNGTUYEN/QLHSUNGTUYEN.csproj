@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE33CA64-754D-4DDA-8F18-2DE7C78CC279}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLHSUNGTUYEN</RootNamespace>
+    <AssemblyName>QLHSUNGTUYEN</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DoanhNghiep\fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhNghiep\fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhNghiep\fWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhNghiep\fWelcome.Designer.cs">
+      <DependentUpon>fWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\CustomParameter.cs" />
+    <Compile Include="Functions\Database.cs" />
+    <Compile Include="DoanhNghiep\fDSPhieuDKQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhNghiep\fDSPhieuDKQC.Designer.cs">
+      <DependentUpon>fDSPhieuDKQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTest.Designer.cs">
+      <DependentUpon>fTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhNghiep\fPhieuDKQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhNghiep\fPhieuDKQC.Designer.cs">
+      <DependentUpon>fPhieuDKQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DoanhNghiep\fDSPhieuDKQC.resx">
+      <DependentUpon>fDSPhieuDKQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhNghiep\fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhNghiep\fWelcome.resx">
+      <DependentUpon>fWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhNghiep\fPhieuDKQC.resx">
+      <DependentUpon>fPhieuDKQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTest.resx">
+      <DependentUpon>fTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NhanVien\" />
+    <Folder Include="UngVien\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Welcome.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
