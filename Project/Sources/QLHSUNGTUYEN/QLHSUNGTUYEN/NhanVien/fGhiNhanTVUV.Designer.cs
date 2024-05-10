@@ -182,7 +182,6 @@
             this.dgvDSPhieuUV.Size = new System.Drawing.Size(979, 254);
             this.dgvDSPhieuUV.TabIndex = 36;
             this.dgvDSPhieuUV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPhieuUV_CellClick);
-            this.dgvDSPhieuUV.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPhieuUV_CellContentDoubleClick);
             this.dgvDSPhieuUV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPhieuUV_CellDoubleClick);
             // 
             // txtNgaylap
