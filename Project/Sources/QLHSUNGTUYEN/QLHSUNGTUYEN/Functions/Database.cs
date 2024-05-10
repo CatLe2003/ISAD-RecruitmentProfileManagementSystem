@@ -13,7 +13,7 @@ namespace QLHSUNGTUYEN
 {
     public class Database
     {
-        private string strCon = @"Data Source=LAPTOP-MA9ME0JB; Initial Catalog=QLHSUngTuyen;Integrated Security=True;";
+        private string strCon = @"Data Source=localhost; Initial Catalog=QLHSUngTuyen;Integrated Security=True;";
         private SqlConnection conn;
         /*private string sql;*/
         private DataTable dtable;
