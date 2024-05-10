@@ -29,7 +29,7 @@ namespace QLHSUNGTUYEN.NhanVien
 
         private void fGhiNhanTVUV_Load(object sender, EventArgs e)
         {
-            dgvDSPhieuUV.DataSource = ghiNhanTVUVBus.LoadPhieuDKTVUV(maphieu, keyword);
+            dgvDSPhieuUV.DataSource = ghiNhanTVUVBus.LoadPhieuDKTVUV(keyword);
         }
 
         private void btnTim_Click(object sender, EventArgs e)

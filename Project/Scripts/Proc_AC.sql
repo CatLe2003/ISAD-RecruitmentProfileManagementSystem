@@ -3,7 +3,7 @@ GO
 
 SELECT * FROM UNGVIEN;
 SELECT * FROM PHIEUDKTVUV;
-
+GO
 CREATE OR ALTER PROCEDURE CheckEmailRegistered
     @Email NVARCHAR(50)
 AS
@@ -19,7 +19,7 @@ BEGIN
     END
 
 END;
-
+go
 CREATE OR ALTER PROCEDURE InsertUngVien
 	@Hoten NVARCHAR(50),
 	@SDT CHAR(10),
@@ -46,10 +46,9 @@ BEGIN
     END
 
 END;
-
+go
 
 CREATE OR ALTER PROC XemDSPhieuDKTVUngVien
-	@maphieu INT,
     @keyword NVARCHAR(100)
 AS
 BEGIN
@@ -68,7 +67,7 @@ BEGIN
         OR CONVERT(NVARCHAR(100), TrangThai) LIKE '%' + @keyword + '%'
         OR FORMAT(NgayLap, 'dd/MM/yyyy') LIKE '%' + @keyword + '%'
 END;
-
+go
 CREATE OR ALTER PROC UpdateTrangThaiPhieuDKTVUV
 	@maphieu int,
 	@manv int,
@@ -89,7 +88,7 @@ BEGIN
 		WHERE MaPhieuDKUV = @maphieu;
 	END;
 END;
-
+go
 CREATE OR ALTER PROC XemUVTheoMaPhieu
 	@maphieu INT
 AS
@@ -99,14 +98,14 @@ BEGIN
 END;
 
 
-CheckEmailRegistered 'tredsell0@live.com'
+--CheckEmailRegistered 'tredsell0@live.com'
 
-InsertUngVien 'yeosang', '1506', 'Male', 'jongho house', 'chickenmaster@gmail.com', '123'
+--InsertUngVien 'yeosang', '1506', 'Male', 'jongho house', 'chickenmaster@gmail.com', '123'
 
-XemDSPhieuDKTVUngVien null,null
+--XemDSPhieuDKTVUngVien ''
 
-SELECT * FROM UNGVIEN;
-SELECT * FROM PHIEUDKTVUV;
+--SELECT * FROM UNGVIEN;
+--SELECT * FROM PHIEUDKTVUV;
 
 UpdateTrangThaiPhieuDKTVUV '22', '2', 'Pending'
 

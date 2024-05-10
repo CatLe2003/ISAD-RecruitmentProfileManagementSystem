@@ -56,7 +56,6 @@ namespace QLHSUNGTUYEN.UngVien
             {
                 // Clear the input fields after successful registration
                 ClearInputFields();
-                this.Dispose();
             }
         }
         private void ClearInputFields()
@@ -70,5 +69,11 @@ namespace QLHSUNGTUYEN.UngVien
             radioFemale.Checked = false;
         }
 
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fLogin _fLogin = new fLogin();
+            _fLogin.Show();
+        }
     }
 }
