@@ -57,9 +57,9 @@
             this.label1.Location = new System.Drawing.Point(145, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(687, 32);
+            this.label1.Size = new System.Drawing.Size(756, 32);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DANH SÁCH PHIẾU ĐĂNG KÝ THÀNH VIÊN CỦA ỨNG VIÊN";
+            this.label1.Text = "DANH SÁCH PHIẾU ĐĂNG KÝ THÀNH VIÊN CỦA DOANH NGHIỆP";
             // 
             // txtKeyword
             // 
@@ -166,8 +166,8 @@
             // 
             this.dgvDSPhieuDN.AllowUserToAddRows = false;
             this.dgvDSPhieuDN.AllowUserToDeleteRows = false;
-            this.dgvDSPhieuDN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvDSPhieuDN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSPhieuDN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSPhieuDN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -243,7 +243,7 @@
             this.radioInvalid.AutoSize = true;
             this.radioInvalid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioInvalid.Location = new System.Drawing.Point(855, 413);
-            this.radioInvalid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioInvalid.Margin = new System.Windows.Forms.Padding(4);
             this.radioInvalid.Name = "radioInvalid";
             this.radioInvalid.Size = new System.Drawing.Size(81, 27);
             this.radioInvalid.TabIndex = 52;
@@ -257,7 +257,7 @@
             this.radioValid.AutoSize = true;
             this.radioValid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioValid.Location = new System.Drawing.Point(775, 413);
-            this.radioValid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioValid.Margin = new System.Windows.Forms.Padding(4);
             this.radioValid.Name = "radioValid";
             this.radioValid.Size = new System.Drawing.Size(68, 27);
             this.radioValid.TabIndex = 51;
@@ -271,7 +271,7 @@
             this.radioPending.AutoSize = true;
             this.radioPending.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioPending.Location = new System.Drawing.Point(800, 441);
-            this.radioPending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioPending.Margin = new System.Windows.Forms.Padding(4);
             this.radioPending.Name = "radioPending";
             this.radioPending.Size = new System.Drawing.Size(93, 27);
             this.radioPending.TabIndex = 53;
@@ -303,7 +303,7 @@
             this.Controls.Add(this.txtKeyword);
             this.Controls.Add(this.lblKeyword);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fGhiNhanTVDN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fGhiNhanTVDN";
