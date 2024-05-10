@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLHSUNGTUYEN.DoanhNghiep;
 using QLHSUNGTUYEN.NhanVien.Forms;
 
 namespace QLHSUNGTUYEN.NhanVien
@@ -38,13 +39,21 @@ namespace QLHSUNGTUYEN.NhanVien
 
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            new fLogin().Show();
         }
 
         private void HopDongToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fLapHopDong _fLapHopDong = new fLapHopDong();
             AddForm(_fLapHopDong);
+        }
+
+        private void fMain_NV_Load(object sender, EventArgs e)
+        {
+            lblID.Text = "NV_" + id;
+            fWelcome _fWelcome = new fWelcome();
+            AddForm(_fWelcome);
         }
     }
 }

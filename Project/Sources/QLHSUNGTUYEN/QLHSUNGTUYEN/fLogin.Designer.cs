@@ -191,7 +191,7 @@
             // 
             this.btnDangky.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDangky.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDangky.BackColor = System.Drawing.Color.LightBlue;
             this.btnDangky.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangky.Location = new System.Drawing.Point(197, 432);
             this.btnDangky.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

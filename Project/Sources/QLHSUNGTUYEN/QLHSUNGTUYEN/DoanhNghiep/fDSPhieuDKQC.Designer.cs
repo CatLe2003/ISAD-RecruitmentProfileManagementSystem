@@ -132,7 +132,6 @@
             this.txtKeyword.Name = "txtKeyword";
             this.txtKeyword.Size = new System.Drawing.Size(313, 31);
             this.txtKeyword.TabIndex = 9;
-            this.txtKeyword.TextChanged += new System.EventHandler(this.txtKeyword_TextChanged);
             // 
             // lblKeyword
             // 
@@ -143,7 +142,6 @@
             this.lblKeyword.Size = new System.Drawing.Size(80, 25);
             this.lblKeyword.TabIndex = 8;
             this.lblKeyword.Text = "Từ khóa:";
-            this.lblKeyword.Click += new System.EventHandler(this.lblKeyword_Click);
             // 
             // btnSearch
             // 

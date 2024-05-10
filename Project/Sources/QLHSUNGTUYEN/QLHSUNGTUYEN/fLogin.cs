@@ -126,12 +126,12 @@ namespace QLHSUNGTUYEN
 
         private void fLogin_Load(object sender, EventArgs e)
         {
-            
             var db = new Database();
             
             cbbVaiTro.Items.Add("Doanh nghiệp");
             cbbVaiTro.Items.Add("Ứng viên");
             cbbVaiTro.Items.Add("Nhân viên");
+            cbbVaiTro.Focus();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
