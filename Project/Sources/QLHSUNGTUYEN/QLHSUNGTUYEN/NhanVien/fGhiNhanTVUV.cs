@@ -29,21 +29,7 @@ namespace QLHSUNGTUYEN.NhanVien
 
         private void fGhiNhanTVUV_Load(object sender, EventArgs e)
         {
-            dgvDSPhieuUV.DataSource = null; // reset lại csdl được hiển thị
-            // load toàn bộ danh sách phiếu đăng ký thành viên ứng viên
-            List<CustomParameter> parameters = new List<CustomParameter>();
-            parameters.Add(new CustomParameter()
-            {
-                key = "@maphieu",
-                value = maphieu
-            });
-            parameters.Add(new CustomParameter()
-            {
-                key = "@keyword",
-                value = keyword
-            });
-
-            dgvDSPhieuUV.DataSource = new Database().SelectData("XemDSPhieuDKTVUngVien", parameters);
+            dgvDSPhieuUV.DataSource = ghiNhanTVUVBus.LoadPhieuDKTVUV(maphieu, keyword);
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -144,12 +130,6 @@ namespace QLHSUNGTUYEN.NhanVien
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ClearInputFields();
-        }
-
-        private void dgvDSPhieuUV_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            new fTTinDKUV(maphieu).ShowDialog();
-            fGhiNhanTVUV_Load(null, null);
         }
 
         private void dgvDSPhieuUV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
