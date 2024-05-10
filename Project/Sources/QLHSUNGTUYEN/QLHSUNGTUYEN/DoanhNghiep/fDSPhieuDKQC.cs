@@ -118,23 +118,13 @@ namespace QLHSUNGTUYEN
                         else // nếu không thành công
                         {
                             Console.WriteLine(res);
-                            MessageBox.Show("Error: Thực thi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Lỗi: Thực thi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }                  
                 // Load lại ds phiếu đk quảng cáo
                 LoadPhieuDKQC();
             }
-        }
-
-        private void txtKeyword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblKeyword_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
