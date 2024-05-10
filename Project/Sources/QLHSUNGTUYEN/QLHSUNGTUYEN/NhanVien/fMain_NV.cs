@@ -55,5 +55,11 @@ namespace QLHSUNGTUYEN.NhanVien
             fWelcome _fWelcome = new fWelcome();
             AddForm(_fWelcome);
         }
+
+        private void DNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fGhiNhanTVDN _fGhiNhanTVDN = new fGhiNhanTVDN(id);
+            AddForm(_fGhiNhanTVDN);
+        }
     }
 }

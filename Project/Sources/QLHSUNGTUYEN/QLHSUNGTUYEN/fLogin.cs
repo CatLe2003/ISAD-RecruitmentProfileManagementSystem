@@ -145,7 +145,9 @@ namespace QLHSUNGTUYEN
 
             if (result == DialogResult.Yes)
             {
-                // User chose Yes, perform the action
+                this.Hide();
+                DoanhNghiep.fDangKyTVDN _fDangKyTVDN = new DoanhNghiep.fDangKyTVDN();
+                _fDangKyTVDN.Show();
             }
             else
             {

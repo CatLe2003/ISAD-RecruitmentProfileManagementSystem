@@ -33,7 +33,7 @@
             this.thoatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phieuDKQCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.doanhNghiệpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HopDongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContent = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(973, 27);
+            this.menuStrip.Size = new System.Drawing.Size(973, 28);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -78,35 +78,36 @@
             this.phieuDKQCToolStripMenuItem,
             this.HopDongToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.quảnLýToolStripMenuItem.Text = "Quản lý";
             // 
             // phieuDKQCToolStripMenuItem
             // 
             this.phieuDKQCToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.doanhNghiệpToolStripMenuItem,
+            this.DNToolStripMenuItem,
             this.UVToolStripMenuItem});
             this.phieuDKQCToolStripMenuItem.Name = "phieuDKQCToolStripMenuItem";
-            this.phieuDKQCToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
+            this.phieuDKQCToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.phieuDKQCToolStripMenuItem.Text = "Phiếu đăng ký TV";
             // 
-            // doanhNghiệpToolStripMenuItem
+            // DNToolStripMenuItem
             // 
-            this.doanhNghiệpToolStripMenuItem.Name = "doanhNghiệpToolStripMenuItem";
-            this.doanhNghiệpToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
-            this.doanhNghiệpToolStripMenuItem.Text = "Doanh nghiệp";
+            this.DNToolStripMenuItem.Name = "DNToolStripMenuItem";
+            this.DNToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.DNToolStripMenuItem.Text = "Doanh nghiệp";
+            this.DNToolStripMenuItem.Click += new System.EventHandler(this.DNToolStripMenuItem_Click);
             // 
             // UVToolStripMenuItem
             // 
             this.UVToolStripMenuItem.Name = "UVToolStripMenuItem";
-            this.UVToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.UVToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.UVToolStripMenuItem.Text = "Ứng viên";
             this.UVToolStripMenuItem.Click += new System.EventHandler(this.UVToolStripMenuItem_Click);
             // 
             // HopDongToolStripMenuItem
             // 
             this.HopDongToolStripMenuItem.Name = "HopDongToolStripMenuItem";
-            this.HopDongToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
+            this.HopDongToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.HopDongToolStripMenuItem.Text = "Hợp đồng ";
             this.HopDongToolStripMenuItem.Click += new System.EventHandler(this.HopDongToolStripMenuItem_Click);
             // 
@@ -114,10 +115,10 @@
             // 
             this.pnlContent.BackColor = System.Drawing.Color.White;
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 27);
+            this.pnlContent.Location = new System.Drawing.Point(0, 28);
             this.pnlContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(973, 515);
+            this.pnlContent.Size = new System.Drawing.Size(973, 514);
             this.pnlContent.TabIndex = 3;
             // 
             // lblID
@@ -169,7 +170,7 @@
         private System.Windows.Forms.ToolStripMenuItem thoatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phieuDKQCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem doanhNghiệpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DNToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UVToolStripMenuItem;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.ToolStripMenuItem HopDongToolStripMenuItem;

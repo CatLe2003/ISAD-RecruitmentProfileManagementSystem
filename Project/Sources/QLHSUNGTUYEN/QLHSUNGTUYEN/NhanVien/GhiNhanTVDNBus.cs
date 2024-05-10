@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace QLHSUNGTUYEN.NhanVien
 {
-    internal class GhiNhanTVUVBus
+    internal class GhiNhanTVDNBus
     {
-        public DataTable LoadPhieuDKTVUV(string keyword)
+       public DataTable LoadPhieuDKTVDN(string keyword)
         {
             List<CustomParameter> parameters = new List<CustomParameter>();
 
@@ -19,13 +19,12 @@ namespace QLHSUNGTUYEN.NhanVien
                 value = keyword
             });
 
-            // Call the data access layer to fetch data
-            return new Database().SelectData("XemDSPhieuDKTVUngVien", parameters);
+            return new Database().SelectData("XemDSPhieuDKTVDN", parameters);
         }
 
-        public int UpdateTrangThaiPhieuDKTVUV(string maphieu, string manv, string trangthai)
+        public int UpdateTrangThaiPhieuDKTVDN(string maphieu, string manv, string trangthai)
         {
-            string sql = "UpdateTrangThaiPhieuDKTVUV";
+            string sql = "UpdateTrangThaiPhieuDKTVDN";
 
             // parameters
             List<CustomParameter> parameters = new List<CustomParameter>();
@@ -45,7 +44,6 @@ namespace QLHSUNGTUYEN.NhanVien
                 value = trangthai
             });
 
-            // Truyền 2 tham số là câu lệnh sql và danh sách các tham số
             return new Database().ExeCute(sql, parameters);
         }
     }

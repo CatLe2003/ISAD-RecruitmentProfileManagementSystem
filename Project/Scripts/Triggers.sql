@@ -42,7 +42,7 @@ BEGIN
         RETURN;
     END;
 END;
-
+GO 
 -- Tạo trigger
 CREATE OR ALTER TRIGGER UpdateHoaDon
 ON HOADON
