@@ -108,7 +108,13 @@ namespace QLHSUNGTUYEN.NhanVien
             if (selectedItem != null)
             {
                 int i = thu.TimDotThuLonNhat(selectedItem.MaHDong) + 1;
+                
                 int soDotTT = selectedItem.SoDotTT;
+                if (i > soDotTT)
+                {
+                    MessageBox.Show("Đã thanh toán đủ!");
+                    return;
+                }
                 cbbdot.Items.Clear();
                 for (; i <= soDotTT; i++)
                 {
@@ -123,7 +129,11 @@ namespace QLHSUNGTUYEN.NhanVien
             if (selectedItem != null)
             {
                 List<HopDongg> list = new HopDongg().DanhSachHopDong(selectedItem.MaDN.ToString());
-
+                if(list == null)
+                {
+                    MessageBox.Show("Doanh Nghiệp chưa có hợp đồng!");
+                    return;
+                }
                 cbbhd.DataSource = list;
                 cbbhd.ValueMember = "MaHDong";
                 cbbhd.DisplayMember = "MaHDong";
