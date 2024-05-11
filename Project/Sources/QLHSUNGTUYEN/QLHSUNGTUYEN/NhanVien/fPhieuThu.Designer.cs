@@ -1,4 +1,4 @@
-﻿namespace QLHSUNGTUYEN.NhanVien
+namespace QLHSUNGTUYEN.NhanVien
 {
     partial class fPhieuThu
     {
