@@ -1,4 +1,4 @@
-﻿USE DATABSASE QLHSUNGTUYEN
+USE DATABSASE QLHSUNGTUYEN
 GO
 Select * from doanhnghiep;
 
@@ -31,7 +31,12 @@ BEGIN
         IF EXISTS (SELECT 1 FROM DOANHNGHIEP WHERE Email = @Email AND Pass_word = @Password)
         BEGIN
             -- Đăng nhập thành công với loại tài khoản doanh nghiệp
-            SELECT 'Login successful' AS Result;
+            DECLARE @MaPhieuDKTVDN INT;
+            SELECT @MaPhieuDKTVDN = MaPhieuDKDN FROM DOANHNGHIEP WHERE Email = @Email;
+            IF EXISTS (SELECT 1 FROM PHIEUDKTVDN WHERE MaPhieuDKDN = @MaPhieuDKTVDN AND TrangThai = 'Valid')
+                SELECT 'Login successful' AS Result;
+            ELSE
+                SELECT 'Invalid account type' AS Result;
         END
         ELSE
         BEGIN
@@ -44,7 +49,12 @@ BEGIN
         IF EXISTS (SELECT 1 FROM UNGVIEN WHERE Email = @Email AND Pass_word = @Password)
         BEGIN
             -- Đăng nhập thành công với loại tài khoản ứng viên
-            SELECT 'Login successful' AS Result;
+            DECLARE @MaPhieuDKTVUV INT;
+            SELECT @MaPhieuDKTVUV = MaPhieuDKUV FROM UNGVIEN WHERE Email = @Email;
+            IF EXISTS (SELECT 1 FROM PHIEUDKTVUV WHERE MaPhieuDKUV = @MaPhieuDKTVUV AND TrangThai = 'Valid')
+                SELECT 'Login successful' AS Result;
+            ELSE
+                SELECT 'Invalid account type' AS Result;
         END
         ELSE
         BEGIN
@@ -57,7 +67,8 @@ BEGIN
         -- Loại tài khoản không hợp lệ
         SELECT 'Invalid account type' AS Result;
     END
-END;
+END; 
+
 -- Lấy ID của user đã login
 CREATE OR ALTER PROCEDURE GetUserID
     @LoaiTK NVARCHAR(2),
