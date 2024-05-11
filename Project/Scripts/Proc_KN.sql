@@ -1,4 +1,4 @@
-USE DATABSASE QLHSUNGTUYEN
+USE QLHSUNGTUYEN
 GO
 Select * from doanhnghiep;
 
@@ -255,6 +255,29 @@ BEGIN
     FROM PHIEUDKQUANGCAO
     WHERE MaHT = @MaHT AND MaDT = @MaDT
 END
+GO
+CREATE OR ALTER PROCEDURE XoaPhieuDKQuangCao
+    @MaHT INT,
+    @MaDT INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT 1 FROM PHIEUDKQUANGCAO WHERE MaHT = @MaHT AND MaDT = @MaDT)
+    BEGIN
+        -- Xóa phiếu đăng ký quảng cáo
+        DELETE FROM PHIEUDKQUANGCAO WHERE MaHT = @MaHT AND MaDT = @MaDT;
+        
+        PRINT 'Xóa Phieu DK Quang Cao thành công';
+		RETURN 1
+    END
+    ELSE
+    BEGIN
+        -- Không tìm thấy phiếu đăng ký quảng cáo
+        RAISERROR('Khong the xoa Phieu DK Quang Cao', 16, 1)
+        RETURN 0
+    END
+END;
 
 exec XemPhieuDKQuangCao 2,7
 exec CapNhatPhieuDKQuangCao 2,7,23,'03-12-2024'

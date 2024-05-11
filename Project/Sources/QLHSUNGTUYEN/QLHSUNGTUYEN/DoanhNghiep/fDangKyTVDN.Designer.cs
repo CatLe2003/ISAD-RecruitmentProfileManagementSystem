@@ -251,7 +251,8 @@
             this.Controls.Add(this.lblForm);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fDangKyTVDN";
-            this.Text = "fDangKyTVDN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng ký thành viên doanh nghiệp";
             this.Load += new System.EventHandler(this.fDangKyTVDN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

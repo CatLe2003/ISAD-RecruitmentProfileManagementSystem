@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLHSUNGTUYEN.DoanhNghiep;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -190,7 +191,6 @@ namespace QLHSUNGTUYEN
                 MessageBox.Show("Error: Thực thi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Close();

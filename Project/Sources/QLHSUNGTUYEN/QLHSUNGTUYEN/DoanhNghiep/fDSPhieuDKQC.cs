@@ -111,7 +111,7 @@ namespace QLHSUNGTUYEN
 
                         // Truyền 2 tham số là câu lệnh sql và danh sách các tham số
                         var res = new Database().ExeCute(sql, parameters);
-                        if (res == 1) // nếu thực thi thành công
+                        if (res == -1) // nếu thực thi thành công
                         {
                             MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }

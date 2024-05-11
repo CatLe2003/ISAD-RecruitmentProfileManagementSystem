@@ -44,7 +44,7 @@
             // 
             this.txtMaSoThue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSoThue.Location = new System.Drawing.Point(190, 155);
-            this.txtMaSoThue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaSoThue.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSoThue.Name = "txtMaSoThue";
             this.txtMaSoThue.Size = new System.Drawing.Size(427, 32);
             this.txtMaSoThue.TabIndex = 27;
@@ -53,7 +53,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(190, 291);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(427, 32);
             this.txtEmail.TabIndex = 25;
@@ -62,7 +62,7 @@
             // 
             this.txtDiachi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiachi.Location = new System.Drawing.Point(190, 241);
-            this.txtDiachi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiachi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(427, 32);
             this.txtDiachi.TabIndex = 24;
@@ -71,7 +71,7 @@
             // 
             this.txtTenDN.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDN.Location = new System.Drawing.Point(190, 108);
-            this.txtTenDN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenDN.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(427, 32);
             this.txtTenDN.TabIndex = 23;
@@ -167,8 +167,9 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblForm);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fTTinDKDN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết phiếu đăng kí";
             this.Load += new System.EventHandler(this.fTTinDKDN_Load);
             this.ResumeLayout(false);

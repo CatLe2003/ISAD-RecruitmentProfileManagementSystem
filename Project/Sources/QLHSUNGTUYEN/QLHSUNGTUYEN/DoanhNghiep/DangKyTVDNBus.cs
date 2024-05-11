@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +33,7 @@ namespace QLHSUNGTUYEN.DoanhNghiep
                 return false;
             }
 
-            bool registrationSuccess = InsertDoanhNghiep(TenDN, MaSoThue, NguoiDaiDien, Diachi, Email,Pass_word);
+            bool registrationSuccess = InsertDoanhNghiep(TenDN, MaSoThue, NguoiDaiDien, Diachi, Email, Pass_word);
             if (registrationSuccess)
             {
                 MessageBox.Show("Đăng ký tài khoản thành công, vui lòng chờ nhân viên xác thực tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
