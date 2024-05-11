@@ -21,7 +21,7 @@ namespace QLHSUNGTUYEN.NhanVien.DAL
         public int DocTTDT(int MaDT)
         {
             int result = 0;
-          
+
             try
             {
                 using (SqlConnection connection = new SqlConnection(strConn))
@@ -57,8 +57,46 @@ namespace QLHSUNGTUYEN.NhanVien.DAL
             return result;
         }
 
+        //Kiem tra MaDT tuong ung voi MaDN
+        public int DocTTMaDTCuaDN(int MaDT, int MaDN)
+        {
+            int result = 0;
 
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(strConn))
+                {
+                    connection.Open();
+                    string query = "SELECT COUNT(*) FROM THONGTINDANGTUYEN WHERE MaDT = @MaDT AND MaDN = @MaDN";
 
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaDT", MaDT);
+                        command.Parameters.AddWithValue("@MaDN", MaDN);
+
+                        // Execute the query
+                        object queryResult = command.ExecuteScalar();
+
+                        // Check if the result is not null and convert it to int
+                        if (queryResult != null && queryResult != DBNull.Value)
+                        {
+                            result = Convert.ToInt32(queryResult);
+                        }
+                    }
+                }
+
+                if (result >= 1) //If exists 
+                {
+                    return 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in ThongTinDT_DAO.DocTTMaDTCuaDN: " + ex.Message);
+            }
+
+            return result;
+        }
 
     }
 }

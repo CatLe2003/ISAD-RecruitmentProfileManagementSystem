@@ -45,7 +45,7 @@ namespace QLHSUNGTUYEN.NhanVien
 
         private void HopDongToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fLapHopDong _fLapHopDong = new fLapHopDong();
+            fLapHopDong _fLapHopDong = new fLapHopDong(id);
             AddForm(_fLapHopDong);
         }
 

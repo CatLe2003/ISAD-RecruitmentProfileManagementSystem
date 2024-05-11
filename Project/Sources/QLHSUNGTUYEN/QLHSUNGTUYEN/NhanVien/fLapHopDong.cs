@@ -20,9 +20,10 @@ namespace QLHSUNGTUYEN.NhanVien.Forms
         HopDongg hopDong = new HopDongg();
         ThongTinDT ttdt = new ThongTinDT();
 
-        public fLapHopDong()
+        public fLapHopDong(string MaNV)
         {
             InitializeComponent();
+            nhanVien.MaNV = int.Parse(MaNV); //Pass the employee ID to the form
         }
 
         private void button1_Click(object sender, EventArgs e) //btn_Ghi
@@ -35,7 +36,8 @@ namespace QLHSUNGTUYEN.NhanVien.Forms
                 hopDong.NoiDung = textBox6.Text;
                 hopDong.SoDotTT = int.Parse(textBox8.Text);
                 hopDong.SoTienTT = int.Parse(textBox9.Text);
-                hopDong.UuDai = int.Parse(textBox10.Text);
+
+                //hopDong.UuDai = int.Parse(textBox10.Text);
 
                 //Convert date format 
                 hopDong.NgKy = DateTime.ParseExact(textBox4.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
@@ -52,7 +54,13 @@ namespace QLHSUNGTUYEN.NhanVien.Forms
                 {
                     hopDong.TinhTrangKyDuyet = "0";
                 }
-
+                //Kiem tra MaDT tuong ung voi MaDN
+                bool success_1 = ttdt.KiemTraMaDTTUMaDN(ttdt, doanhNghiep);
+                if (!success_1)
+                {
+                    MessageBox.Show("MaDT does not match MaDN.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 //Call the method in the business logic layer to insert the new row
                 bool success = hopDong.GhiNhanHopDong(nhanVien, doanhNghiep, hopDong);
 
@@ -88,11 +96,18 @@ namespace QLHSUNGTUYEN.NhanVien.Forms
             ttdt.MaDT = int.Parse(textBox1.Text);
             hopDong.UuDai = int.Parse(textBox10.Text);
 
-            //Call the method in the business logic layer to calculate the total amount
-            int total = hopDong.TinhTien(ttdt, hopDong);
+            //Check if MaDT exists
+            bool success = ttdt.KiemTraThongTinDT(ttdt.MaDT);
+            if (success)
+            {
+                //Call the method in the business logic layer to calculate the total amount
+                int total = hopDong.TinhTien(ttdt, hopDong);
 
-            //Display the total amount in textbox9
-            textBox9.Text = total.ToString();
+                //Display the total amount in textbox9
+                textBox9.Text = total.ToString();
+            }
+
+
         }
 
 

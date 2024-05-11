@@ -28,24 +28,29 @@ namespace QLHSUNGTUYEN.NhanVien.BLL
 
         HopDong_DAO hopDong_DAO = new HopDong_DAO();
         NVien nhanVien = new NVien();
-        ThongTinDT_DAO thongTinDT_DAO = new ThongTinDT_DAO();
+        
 
         public bool GhiNhanHopDong(NVien nhanVien, DNghiep doanhNghiep, HopDongg hopDong)
         {
             try
             {
-                int result = hopDong_DAO.DocThongTinDNTrongHD(doanhNghiep.MaDN); 
+                int result = hopDong_DAO.DocThongTinDNTrongHD(doanhNghiep.MaDN);
                 bool success;
                 if (result == 2) //MaDN exists in HOPDONG  
                 {
                     //Find the original contract
                     hopDong.PhuLuc = hopDong_DAO.TimKiemHDGoc(doanhNghiep.MaDN);
 
-                    //Insert new contract 
-                    success = hopDong_DAO.ThemHopDong(nhanVien.MaNV, doanhNghiep.MaDN, hopDong);
+
+                    MessageBox.Show("MaDN already exists in table HOPDONG.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    success = false;
                     return success;
+
+                    //Insert new contract 
+                    //success = hopDong_DAO.ThemHopDong(nhanVien.MaNV, doanhNghiep.MaDN, hopDong);
+                    //return success;
                 }
-                else if (result == 1) 
+                else if (result == 1)
                 {
                     //PhuLuc is set NULL by default 
                     // Call the data access layer to insert new contract
@@ -71,15 +76,6 @@ namespace QLHSUNGTUYEN.NhanVien.BLL
         {
             try
             {
-                //Call DAO to check if MaDT exists
-              
-                int result = thongTinDT_DAO.DocTTDT(ttdt.MaDT);
-
-                if (result == 0) //If MaDT does not exist
-                {
-                    MessageBox.Show("MaDT does not exist in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return -1;
-                }
 
                 //Call DAO to calculate the total amount to be paid
                 int tongTien = hopDong_DAO.ThanhToanPhieuDKQC(ttdt.MaDT, hd.UuDai);
@@ -89,10 +85,11 @@ namespace QLHSUNGTUYEN.NhanVien.BLL
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Error in PhieuDKQC.ThanhToan: " + ex.Message, ex);
+                throw new ApplicationException("Error in HopDong.TinhTien: " + ex.Message, ex);
             }
 
         }
+
         public List<HopDongg> DanhSachHopDong(string MaDN) {
             List<HopDongg> list = new List<HopDongg>();
             List<CustomParameter> parameters = new List<CustomParameter>();
