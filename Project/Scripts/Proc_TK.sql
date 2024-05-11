@@ -90,7 +90,7 @@ BEGIN
     IF (@SoTien > 0.3 * @SoTienTT)
     BEGIN
         -- Thêm mới phiếu thu
-            IF (@SoTien < 0.7@SoTienTT)
+            IF (@SoTien < 0.7*@SoTienTT)
             BEGIN
                 -- Thêm mới phiếu thu
                 INSERT INTO PHIEUTHU (MaNV, DotThu, NgayThu, SoTien, MaHDong)
