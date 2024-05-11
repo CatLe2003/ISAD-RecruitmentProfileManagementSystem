@@ -1,10 +1,25 @@
-﻿USE QLHSUNGTUYEN
+USE QLHSUNGTUYEN
 GO
 
--- NHANVIEN --
+delete from HOPDONG;
+delete from PHIEUDKQUANGCAO;
+delete from PHIEUTHU;
+delete from HOADON;
+delete from HSUT_BANGCAP;
+delete from HOSOUNGTUYEN;
+delete from HINHTHUCDANGTUYEN;
+delete from BANGCAP;
+delete from PHIEUDKUNGTUYEN;
+delete from THONGTINDANGTUYEN;
+delete from UNGVIEN;
+delete from PHIEUDKTVUV;
+delete from PHIEUDKTVDN;
+delete from DOANHNGHIEP;
 delete from NHANVIEN;
+
+-- NHANVIEN --
 SET IDENTITY_INSERT NHANVIEN OFF
-DBCC CHECKIDENT ('NHANVIEN', RESEED, 1);
+DBCC CHECKIDENT ('NHANVIEN', RESEED, 0);
 insert into NHANVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, LoaiNV) values ('qU4~g?N1,B*P+I', 'Jillane Burleigh', 'Male', 8685863639, '31858 Hintze Alley', 'jburleigh0@indiegogo.com', 'NV');
 insert into NHANVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, LoaiNV) values ('qA4\z{v4', 'Isahella Dunning', 'Male', 7168347955, '36152 Brentwood Parkway', 'idunning1@pbs.org', 'NV');
 insert into NHANVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, LoaiNV) values ('bP9&&gp1+<', 'Deanne Doddrell', 'Male', 8828007673, '42 Doe Crossing Road', 'ddoddrell2@aboutads.info', 'NV');
@@ -25,8 +40,7 @@ insert into NHANVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, LoaiNV) va
 select * from NHANVIEN;
 
 -- PHIEUDKTVDN --
-delete from PHIEUDKTVDN;
-DBCC CHECKIDENT ('PHIEUDKTVDN', RESEED, 1);
+DBCC CHECKIDENT ('PHIEUDKTVDN', RESEED, 0);
 insert into PHIEUDKTVDN (NgayLap, NVXetDuyet, TrangThai) values ('10/8/2023', 5, 'Valid');
 insert into PHIEUDKTVDN (NgayLap, NVXetDuyet, TrangThai) values ('8/6/2023', 10, 'Valid');
 insert into PHIEUDKTVDN (NgayLap, NVXetDuyet, TrangThai) values ('11/19/2023', 7, 'Valid');
@@ -51,8 +65,7 @@ insert into PHIEUDKTVDN (NgayLap, NVXetDuyet, TrangThai) values ('3/9/2024', 7, 
 select * from PHIEUDKTVDN;
 
 -- DOANHNGHIEP --
-delete from DOANHNGHIEP;
-DBCC CHECKIDENT ('DOANHNGHIEP', RESEED, 1);
+DBCC CHECKIDENT ('DOANHNGHIEP', RESEED, 0);
 insert into DOANHNGHIEP (Pass_word, TenDN, MaSoThue, NguoiDaiDien, Diachi, Email, TiemNang, MaPhieuDKDN) values ('uB5=/2d{FrihRb', 'Skyba', '4241054141', 'Clarette Blazey', '681 Florence Lane', 'cblazey0@reuters.com', '1', 1);
 insert into DOANHNGHIEP (Pass_word, TenDN, MaSoThue, NguoiDaiDien, Diachi, Email, TiemNang, MaPhieuDKDN) values ('bY5''!%pD', 'Kayveo', '5281807518', 'Ajay Lindman', '7773 Raven Alley', 'alindman1@wsj.com', '0', 2);
 insert into DOANHNGHIEP (Pass_word, TenDN, MaSoThue, NguoiDaiDien, Diachi, Email, TiemNang, MaPhieuDKDN) values ('sN9&dIzDk', 'Gigabox', '5372147968', 'Brennan Leeke', '812 Fairfield Place', 'bleeke2@t.co', '0', 3);
@@ -74,9 +87,10 @@ insert into DOANHNGHIEP (Pass_word, TenDN, MaSoThue, NguoiDaiDien, Diachi, Email
 insert into DOANHNGHIEP (Pass_word, TenDN, MaSoThue, NguoiDaiDien, Diachi, Email, TiemNang, MaPhieuDKDN) values ('zW8`,d/_v6#h~V', 'Skivee', '5995420360', 'Nina McTear', '9931 Morningstar Circle', 'nmcteari@ftc.gov', '1', 19);
 insert into DOANHNGHIEP (Pass_word, TenDN, MaSoThue, NguoiDaiDien, Diachi, Email, TiemNang, MaPhieuDKDN) values ('dD1.Juet', 'Jamia', '7610604067', 'Ethelind Baudinot', '348 Green Ridge Way', 'ebaudinotj@about.me', '1', 20);
 
+select * from DOANHNGHIEP;
+
 -- PHIEUDKTVUV --
-delete from PHIEUDKTVUV;
-DBCC CHECKIDENT ('PHIEUDKTVUV', RESEED, 1);
+DBCC CHECKIDENT ('PHIEUDKTVUV', RESEED, 0);
 insert into PHIEUDKTVUV (NgayLap, NVXetDuyet, TrangThai) values ('12/24/2023', 2, 'Valid');
 insert into PHIEUDKTVUV (NgayLap, NVXetDuyet, TrangThai) values ('9/3/2023', 1, 'Valid');
 insert into PHIEUDKTVUV (NgayLap, NVXetDuyet, TrangThai) values ('9/8/2023', 7, 'Valid');
@@ -98,9 +112,10 @@ insert into PHIEUDKTVUV (NgayLap, NVXetDuyet, TrangThai) values ('8/28/2023', 7,
 insert into PHIEUDKTVUV (NgayLap, NVXetDuyet, TrangThai) values ('3/24/2024', 8, 'Valid');
 insert into PHIEUDKTVUV (NgayLap, NVXetDuyet, TrangThai) values ('10/30/2023', 5, 'Valid');
 
+select * from PHIEUDKTVUV;
+
 -- UNGVIEN --
-delete from UNGVIEN;
-DBCC CHECKIDENT ('UNGVIEN', RESEED, 1);
+DBCC CHECKIDENT ('UNGVIEN', RESEED, 0);
 insert into UNGVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, MaPhieuDKUV) values ('eN4|8SUc', 'Theresina', 'Male', '2944481847', '5 David Way', 'tredsell0@live.com', 1);
 insert into UNGVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, MaPhieuDKUV) values ('vB1`LgNN+', 'Alexia', 'Female', '1652129257', '96 Twin Pines Pass', 'ahiscocks1@tuttocitta.it', 2);
 insert into UNGVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, MaPhieuDKUV) values ('qC7\G*YOt`#r/.pZ', 'Carolyn', 'Male', '8984323012', '2994 Everett Way', 'chacker2@sbwire.com', 3);
@@ -122,16 +137,18 @@ insert into UNGVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, MaPhieuDKUV
 insert into UNGVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, MaPhieuDKUV) values ('vX4)6Wc|XpcqfWfy', 'Edward', 'Female', '2588676687', '9 Comanche Hill', 'emeai@vkontakte.ru', 19);
 insert into UNGVIEN (Pass_word, Hoten, Gioitinh, Sdt, Diachi, Email, MaPhieuDKUV) values ('kX0?`sCXW}d', 'Katerine', 'Female', '6645555416', '78889 Randy Terrace', 'kkrammerj@seesaa.net', 20);
 
+select * from UNGVIEN;
+
 -- HINHTHUCDANGTUYEN --
-delete from HINHTHUCDANGTUYEN;
-DBCC CHECKIDENT ('HINHTHUCDANGTUYEN', RESEED, 1);
+DBCC CHECKIDENT ('HINHTHUCDANGTUYEN', RESEED, 0);
 insert into HINHTHUCDANGTUYEN (TenHinhThuc, MoTa, GiaTien) values (N'Báo giấy', N'Đăng tuyển trên báo giấy', 1500000);
 insert into HINHTHUCDANGTUYEN (TenHinhThuc, MoTa, GiaTien) values (N'Banner quảng cáo', N'Đăng tuyển trên banner quảng cáo', 2500000);
 insert into HINHTHUCDANGTUYEN (TenHinhThuc, MoTa, GiaTien) values (N'Trang mạng', N'Đăng tuyển trên trang mạng', 3000000);
 
+select * from HINHTHUCDANGTUYEN;
+
 -- THONGTINDANGTUYEN --
-delete from THONGTINDANGTUYEN;
-DBCC CHECKIDENT ('THONGTINDANGTUYEN', RESEED, 1);
+DBCC CHECKIDENT ('THONGTINDANGTUYEN', RESEED, 0);
 insert into THONGTINDANGTUYEN (NgDangTuyen, MaDN, NgHetHan, SoLuong, ViTri, YeuCau) values ('1/20/2024', 14, '12/4/4067', 19.64664, 'Intership', 'Java');
 insert into THONGTINDANGTUYEN (NgDangTuyen, MaDN, NgHetHan, SoLuong, ViTri, YeuCau) values ('5/31/2024', 8, '6/30/6532', 26.60402, 'Fresher', 'JavaScript');
 insert into THONGTINDANGTUYEN (NgDangTuyen, MaDN, NgHetHan, SoLuong, ViTri, YeuCau) values ('4/3/2024', 1, '2/5/8414', 5.15106, 'Senior', 'MongoDB');
@@ -163,8 +180,9 @@ insert into THONGTINDANGTUYEN (NgDangTuyen, MaDN, NgHetHan, SoLuong, ViTri, YeuC
 insert into THONGTINDANGTUYEN (NgDangTuyen, MaDN, NgHetHan, SoLuong, ViTri, YeuCau) values ('6/30/2024', 4, '5/11/3063', 22.54595, 'Intership', 'Python');
 insert into THONGTINDANGTUYEN (NgDangTuyen, MaDN, NgHetHan, SoLuong, ViTri, YeuCau) values ('6/5/2024', 11, '8/9/3786', 44.53334, 'Fresher', 'Python');
 
+select * from THONGTINDANGTUYEN;
+
 -- PHIEUDKUNGTUYEN --
-delete from PHIEUDKUNGTUYEN;
 insert into PHIEUDKUNGTUYEN (MaUV, MaDT, NgayLap) values (12, 9, '04/06/2024');
 insert into PHIEUDKUNGTUYEN (MaUV, MaDT, NgayLap) values (9, 13, '01/22/2024');
 insert into PHIEUDKUNGTUYEN (MaUV, MaDT, NgayLap) values (10, 7, '04/07/2024');
@@ -196,9 +214,10 @@ insert into PHIEUDKUNGTUYEN (MaUV, MaDT, NgayLap) values (20, 25, '04/08/2024');
 insert into PHIEUDKUNGTUYEN (MaUV, MaDT, NgayLap) values (7, 9, '02/15/2024');
 insert into PHIEUDKUNGTUYEN (MaUV, MaDT, NgayLap) values (17, 4, '03/01/2024');
 
+select * from PHIEUDKUNGTUYEN;
+
 -- BANGCAP --
-delete from BANGCAP;
-DBCC CHECKIDENT ('BANGCAP', RESEED, 1);
+DBCC CHECKIDENT ('BANGCAP', RESEED, 0);
 insert into BANGCAP (TenBang, MaUV) values ('CCNP', 9);
 insert into BANGCAP (TenBang, MaUV) values ('CompTIA Network+', 11);
 insert into BANGCAP (TenBang, MaUV) values ('CompTIA Security+', 9);
@@ -230,8 +249,9 @@ insert into BANGCAP (TenBang, MaUV) values ('Microsoft Certified: Azure Administ
 insert into BANGCAP (TenBang, MaUV) values ('Oracle Certified Professional (OCP)', 17);
 insert into BANGCAP (TenBang, MaUV) values ('Oracle Certified Professional (OCP)', 1);
 
+select * from BANGCAP;
+
 -- HOSOUNGTUYEN --
-delete from HOSOUNGTUYEN;
 insert into HOSOUNGTUYEN (MaUV, MaDT, MaNV, TinhTrang) values (12, 9, 3, 'Completed');
 insert into HOSOUNGTUYEN (MaUV, MaDT, MaNV, TinhTrang) values (9, 13, 2, 'Active');
 insert into HOSOUNGTUYEN (MaUV, MaDT, MaNV, TinhTrang) values (10, 7, 4, 'Active');
@@ -263,8 +283,9 @@ insert into HOSOUNGTUYEN (MaUV, MaDT, MaNV, TinhTrang) values (20, 25, 3, 'Compl
 insert into HOSOUNGTUYEN (MaUV, MaDT, MaNV, TinhTrang) values (7, 9, 6, 'InProgress');
 insert into HOSOUNGTUYEN (MaUV, MaDT, MaNV, TinhTrang) values (17, 4, 4, 'InProgress');
 
+select * from HOSOUNGTUYEN;
+
 -- HSUT_BANGCAP --
-delete from HSUT_BANGCAP;
 insert into HSUT_BANGCAP (MaDT, MaUV, MaBang, TinhTrang) values (9, 3, 2, 'Verified');
 insert into HSUT_BANGCAP (MaDT, MaUV, MaBang, TinhTrang) values (26, 3, 24, 'Expired');
 insert into HSUT_BANGCAP (MaDT, MaUV, MaBang, TinhTrang) values (18, 16, 21, 'Pending');
@@ -296,9 +317,10 @@ insert into HSUT_BANGCAP (MaDT, MaUV, MaBang, TinhTrang) values (18, 4, 20, 'Ver
 insert into HSUT_BANGCAP (MaDT, MaUV, MaBang, TinhTrang) values (3, 20, 11, 'Expired');
 insert into HSUT_BANGCAP (MaDT, MaUV, MaBang, TinhTrang) values (20, 3, 9, 'Pending');
 
+select * from HSUT_BANGCAP;
+
 -- HOPDONG --
-delete from HOPDONG;
-DBCC CHECKIDENT ('HOPDONG', RESEED, 1);
+DBCC CHECKIDENT ('HOPDONG', RESEED, 0);
 select * from HOPDONG
 insert into HOPDONG (MaNV, MaDN, NgKy, NgHetHan, NoiDung, PhuLuc, SoDotTT, SoTienTT, TinhTrangKyDuyet, UuDai) values (6, 4, '12/22/2024', '7/28/2024', 'auctor sed tristique in tempus sit amet sem fusce consequat', NULL, 2, 1583682, '1', 0.1);
 insert into HOPDONG (MaNV, MaDN, NgKy, NgHetHan, NoiDung, PhuLuc, SoDotTT, SoTienTT, TinhTrangKyDuyet, UuDai) values (5, 14, '5/3/2030', '3/29/2024', 'a nibh in quis justo maecenas', NULL, 2, 678209, '0', 0.3);
@@ -334,7 +356,6 @@ insert into HOPDONG (MaNV, MaDN, NgKy, NgHetHan, NoiDung, PhuLuc, SoDotTT, SoTie
 
 
 -- PHIEUDKQUANGCAO --
-delete from PHIEUDKQUANGCAO;
 select * from PHIEUDKQUANGCAO
 insert into PHIEUDKQUANGCAO (MaHT, MaDT, MaHDong, NgayLap) values (3, 26, 16, '3/23/2024');
 insert into PHIEUDKQUANGCAO (MaHT, MaDT, MaHDong, NgayLap) values (3, 19, 4, '3/29/2024');
@@ -368,8 +389,7 @@ insert into PHIEUDKQUANGCAO (MaHT, MaDT, MaHDong, NgayLap) values (3, 12, 27, '2
 insert into PHIEUDKQUANGCAO (MaHT, MaDT, MaHDong, NgayLap) values (3, 14, 21, '2/7/2024');
 
 -- PHIEUTHU --
-delete from PHIEUTHU;
-DBCC CHECKIDENT ('PHIEUTHU', RESEED, 1);
+DBCC CHECKIDENT ('PHIEUTHU', RESEED, 0);
 select * from PHIEUTHU
 insert into PHIEUTHU (MaNV, DotThu, NgayThu, SoTien, MaHDong) values (7, 4, '3/20/2024', 2509869, 21);
 insert into PHIEUTHU (MaNV, DotThu, NgayThu, SoTien, MaHDong) values (5, 3, '1/16/2024', 63521, 28);
@@ -403,8 +423,7 @@ insert into PHIEUTHU (MaNV, DotThu, NgayThu, SoTien, MaHDong) values (8, 2, '12/
 insert into PHIEUTHU (MaNV, DotThu, NgayThu, SoTien, MaHDong) values (1, 4, '3/1/2024', 164172, 25);
 
 -- HOADON --
-delete from HOADON;
-DBCC CHECKIDENT ('HOADON', RESEED, 1);
+DBCC CHECKIDENT ('HOADON', RESEED, 0);
 select * from HOADON
 insert into HOADON (MaNV, MaHDong) values (10, 1);
 insert into HOADON (MaNV, MaHDong) values (8, 2);
