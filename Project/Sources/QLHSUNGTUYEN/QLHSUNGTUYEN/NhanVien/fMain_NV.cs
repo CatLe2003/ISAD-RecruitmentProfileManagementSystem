@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,6 +60,17 @@ namespace QLHSUNGTUYEN.NhanVien
         {
             fGhiNhanTVDN _fGhiNhanTVDN = new fGhiNhanTVDN(id);
             AddForm(_fGhiNhanTVDN);
+        }
+
+        private void lậpPhiếuThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fPhieuThu _fPhieuThu = new fPhieuThu(id);
+            _fPhieuThu.ShowDialog();
+        }
+
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
