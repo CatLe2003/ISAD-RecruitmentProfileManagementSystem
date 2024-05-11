@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoanhNghiep\DangKyTVDNBus.cs" />
+    <Compile Include="DoanhNghiep\fDangKyTVDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhNghiep\fDangKyTVDN.Designer.cs">
+      <DependentUpon>fDangKyTVDN.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoanhNghiep\fMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,20 +79,78 @@
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fTest.Designer.cs">
-      <DependentUpon>fTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="DoanhNghiep\fPhieuDKQC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DoanhNghiep\fPhieuDKQC.Designer.cs">
       <DependentUpon>fPhieuDKQC.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginBus.cs" />
+    <Compile Include="NhanVien\BLL\DNghiep.cs" />
+    <Compile Include="NhanVien\BLL\HinhThucDT.cs" />
+    <Compile Include="NhanVien\BLL\HopDongg.cs" />
+    <Compile Include="NhanVien\BLL\NVien.cs" />
+    <Compile Include="NhanVien\BLL\PhieuThu.cs" />
+    <Compile Include="NhanVien\BLL\ThongTinDT.cs" />
+    <Compile Include="NhanVien\DAL\DoanhNghiep_DAO.cs" />
+    <Compile Include="NhanVien\DAL\HopDong_DAO.cs" />
+    <Compile Include="NhanVien\DAL\ThongTinDT_DAO.cs" />
+    <Compile Include="NhanVien\fGhiNhanTVDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\fGhiNhanTVDN.Designer.cs">
+      <DependentUpon>fGhiNhanTVDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\fGhiNhanTVUV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\fGhiNhanTVUV.Designer.cs">
+      <DependentUpon>fGhiNhanTVUV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\fMain_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\fMain_NV.Designer.cs">
+      <DependentUpon>fMain_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\Forms\fLapHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\Forms\fLapHopDong.Designer.cs" />
+    <Compile Include="NhanVien\fPhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\fPhieuThu.Designer.cs">
+      <DependentUpon>fPhieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\fTTinDKDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\fTTinDKDN.Designer.cs">
+      <DependentUpon>fTTinDKDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\fTTinDKUV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\fTTinDKUV.Designer.cs">
+      <DependentUpon>fTTinDKUV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\GhiNhanTVDNBus.cs" />
+    <Compile Include="NhanVien\GhiNhanTVUVBus.cs" />
+    <Compile Include="NhanVien\TTinDNBus.cs" />
+    <Compile Include="NhanVien\TTinUVBus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UngVien\DangKyTVUVBus.cs" />
+    <Compile Include="UngVien\fDangKyTVUV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UngVien\fDangKyTVUV.Designer.cs">
+      <DependentUpon>fDangKyTVUV.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DoanhNghiep\fDangKyTVDN.resx">
+      <DependentUpon>fDangKyTVDN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoanhNghiep\fDSPhieuDKQC.resx">
       <DependentUpon>fDSPhieuDKQC.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,8 +166,24 @@
     <EmbeddedResource Include="DoanhNghiep\fPhieuDKQC.resx">
       <DependentUpon>fPhieuDKQC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fTest.resx">
-      <DependentUpon>fTest.cs</DependentUpon>
+    <EmbeddedResource Include="NhanVien\fGhiNhanTVDN.resx">
+      <DependentUpon>fGhiNhanTVDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\fGhiNhanTVUV.resx">
+      <DependentUpon>fGhiNhanTVUV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\fMain_NV.resx">
+      <DependentUpon>fMain_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\Forms\fLapHopDong.resx" />
+    <EmbeddedResource Include="NhanVien\fPhieuThu.resx">
+      <DependentUpon>fPhieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\fTTinDKDN.resx">
+      <DependentUpon>fTTinDKDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\fTTinDKUV.resx">
+      <DependentUpon>fTTinDKUV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +195,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UngVien\fDangKyTVUV.resx">
+      <DependentUpon>fDangKyTVUV.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,10 +211,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NhanVien\" />
-    <Folder Include="UngVien\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Pictures\Welcome.jpg" />
   </ItemGroup>
