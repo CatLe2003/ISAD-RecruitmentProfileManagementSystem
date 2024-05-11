@@ -1,5 +1,5 @@
 # ISAD-RecruitmentProfileManagementSystem
-## Đồ án môn Phân tích thiết kế hệ thống thông tin - CSC12002
+## Đồ án môn Phân tích thiết kế hệ thống thông tin - CSC12002 - HCMUS
 - PhD. Nguyễn Trần Minh Thư
 - PhD. Lê Nguyễn Hoài Nam
 - MSc. Tiết Gia Hồng
