@@ -1,4 +1,5 @@
-﻿using System;
+using QLHSUNGTUYEN.NhanVien.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +34,7 @@ namespace QLHSUNGTUYEN.NhanVien
             cbbDN.ValueMember = "MaDN";
             cbbDN.DisplayMember = "TenDN";
 
-            lblValue.Text = new NhanVien().LayTenNhanVien(manv);
+            lblValue.Text = new NVien().LayTenNhanVien(manv);
             mtbNgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
         private void button2_Click(object sender, EventArgs e)
