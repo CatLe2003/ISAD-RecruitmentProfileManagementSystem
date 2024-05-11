@@ -12,7 +12,7 @@ namespace QLHSUNGTUYEN.NhanVien.BLL
 {
     internal class HopDongg
     {
-        public int MaHDong;
+        public string MaHDong { get; set; }
         //public string ID;
         //public int MaNV;
         //public int MaDN;
@@ -20,7 +20,7 @@ namespace QLHSUNGTUYEN.NhanVien.BLL
         public DateTime NgHetHan;
         public string NoiDung = "";
         public int? PhuLuc;
-        public int SoDotTT;
+        public int SoDotTT { get; set; }
         public int SoTienTT;
         public string TinhTrangKyDuyet = "";
         public int UuDai;
@@ -91,6 +91,21 @@ namespace QLHSUNGTUYEN.NhanVien.BLL
                 throw new ApplicationException("Error in PhieuDKQC.ThanhToan: " + ex.Message, ex);
             }
 
+        }
+        public List<HopDongg> DanhSachHopDong(string MaDN) {
+            List<HopDongg> list = new List<HopDongg>();
+            List<CustomParameter> parameters = new List<CustomParameter>();
+            parameters.Add(new CustomParameter()
+            {
+                key = "@MaDN",
+                value = MaDN.ToString()
+            });
+            DataTable all_HopDong = new Database().SelectData("GetHopDong", parameters);
+            foreach (DataRow row in all_HopDong.Rows)
+            {
+                list.Add( new HopDongg() { MaHDong = row["MaHDong"].ToString(),  SoDotTT = int.Parse(row["SoDotTT"].ToString()) } );
+            }
+            return list;
         }
     }
 }
