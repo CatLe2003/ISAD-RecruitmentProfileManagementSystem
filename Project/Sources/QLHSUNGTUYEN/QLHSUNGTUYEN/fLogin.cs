@@ -71,32 +71,8 @@ namespace QLHSUNGTUYEN
             }
             #endregion
 
-            // procedure
-            string sql_check = "CheckLogin";
-            string sql_getid = "GetUserID";
-
-            // paremeters
-            List<CustomParameter> parameters = new List<CustomParameter>();
-            parameters.Add(new CustomParameter()
-            {
-                key = "@LoaiTK",
-                value = loaitk.ToString()
-            });
-            parameters.Add(new CustomParameter()
-            {
-                key = "@Email",
-                value = email.ToString()
-            });
-            parameters.Add(new CustomParameter()
-            {
-                key = "@Password",
-                value = password.ToString()
-            });
-
-            // Truyền 2 tham số là câu lệnh sql và danh sách các tham số
-            var res = new Database().SelectData(sql_check, parameters);
-            var row = new Database().Select(sql_getid, parameters);
-            user_id = row["UserID"].ToString();
+            var res = LoginBus.CheckLogin(loaitk, email, password);
+            user_id = LoginBus.GetUserID(loaitk, email, password);
 
             if (res.Rows.Count > 0) // nếu thực thi thành công
             {
