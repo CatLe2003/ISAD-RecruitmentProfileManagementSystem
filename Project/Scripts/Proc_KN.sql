@@ -2,7 +2,7 @@ USE QLHSUNGTUYEN
 GO
 Select * from doanhnghiep;
 
-CheckLogin 'dn', 'cblazey0@reuters.com', 'uB5=/2d{FrihRb'
+CheckLogin 'dn', 'testdn@gmail.com', 'testdn'
 GetUserID 'dn', 'cblazey0@reuters.com', 'uB5=/2d{FrihRb'
 -- Kiểm tra login
 CREATE OR ALTER PROCEDURE CheckLogin
@@ -36,7 +36,7 @@ BEGIN
             IF EXISTS (SELECT 1 FROM PHIEUDKTVDN WHERE MaPhieuDKDN = @MaPhieuDKTVDN AND TrangThai = 'Valid')
                 SELECT 'Login successful' AS Result;
             ELSE
-                SELECT 'Invalid account type' AS Result;
+                RETURN;
         END
         ELSE
         BEGIN
@@ -54,7 +54,7 @@ BEGIN
             IF EXISTS (SELECT 1 FROM PHIEUDKTVUV WHERE MaPhieuDKUV = @MaPhieuDKTVUV AND TrangThai = 'Valid')
                 SELECT 'Login successful' AS Result;
             ELSE
-                SELECT 'Invalid account type' AS Result;
+                RETURN;
         END
         ELSE
         BEGIN
@@ -64,8 +64,7 @@ BEGIN
     END
     ELSE
     BEGIN
-        -- Loại tài khoản không hợp lệ
-        SELECT 'Invalid account type' AS Result;
+        RETURN;
     END
 END; 
 
