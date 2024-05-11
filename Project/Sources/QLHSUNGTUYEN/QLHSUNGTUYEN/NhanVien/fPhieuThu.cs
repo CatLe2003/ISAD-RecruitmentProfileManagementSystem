@@ -1,4 +1,4 @@
-using QLHSUNGTUYEN.NhanVien.BLL;
+using QLHSUNGTUYEN.NhanVien;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
