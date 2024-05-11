@@ -105,6 +105,7 @@ namespace QLHSUNGTUYEN
             string mahdong = cbbMaHDong.Text;
             int maht = 0;
             string ngaylap = mtbNgayLap.Text;
+            ngaylap = ngaylap.Replace("/", "-");
 
             if (cbbMaHT.Text == "Báo giấy")
             {
@@ -130,7 +131,7 @@ namespace QLHSUNGTUYEN
                 NgayLap ở masketbox có dạng dd/mm/yyyy
                 Nhưng trong CSDL lưu dưới dạng yyyy-mm-dd
                 -> Cần chuyển từ dd/mm/yyyy => yyyy-mm-dd
-                */
+                
                 try
                 {
                     ngay_lap = DateTime.ParseExact(mtbNgayLap.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
@@ -141,7 +142,7 @@ namespace QLHSUNGTUYEN
                     MessageBox.Show("Error: Ngày lập không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     mtbNgayLap.Select();
                     return;
-                }
+                }*/
 
                 sql = "ThemPhieuDKQuangCao"/* + maht + "," + madt + "," + mahdong + ",'" + ngay_lap + "'"*/; // gọi tới procedure thêm phiếu đk quảng cáo
             }
