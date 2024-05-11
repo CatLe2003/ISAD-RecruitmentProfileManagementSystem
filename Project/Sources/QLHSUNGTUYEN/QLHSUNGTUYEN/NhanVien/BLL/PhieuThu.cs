@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.AxHost;
 using System.Windows.Forms;
+using System.Data;
 
 namespace QLHSUNGTUYEN
 {
@@ -53,6 +54,18 @@ namespace QLHSUNGTUYEN
             {
                 return false;
             }
+        }
+        public int TimDotThuLonNhat(string maHDong)
+        {
+            List<CustomParameter> parameters = new List<CustomParameter>();
+            parameters.Add(new CustomParameter()
+            {
+                key = "@MaHDong",
+                value = maHDong.ToString()
+            });
+            DataTable DotThu = new Database().SelectData("TimDotThuLonNhat", parameters);
+            return int.Parse(DotThu.Rows[0]["DotThu"].ToString());
+            
         }
     }
 }
